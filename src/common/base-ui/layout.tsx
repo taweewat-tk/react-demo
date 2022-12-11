@@ -11,7 +11,12 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="container pt-4 max-w-3xl relative h-screen">
-      <img onClick={() => navigate(-1)} src={Arrow} alt="arrow-svg" />
+      <img
+        className="cursor-pointer"
+        onClick={() => navigate(-1)}
+        src={Arrow}
+        alt="arrow-svg"
+      />
       <div>{children}</div>
     </div>
   );
