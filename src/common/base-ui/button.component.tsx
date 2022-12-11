@@ -4,12 +4,21 @@ import { ReactNode } from "react";
 type ButtonProps = {
   children: ReactNode;
   bgColor: string;
+  onClick?: () => void;
+  type?: "button" | "submit";
 };
-const Button = ({ bgColor, children }: ButtonProps) => {
+const Button = ({
+  bgColor,
+  children,
+  onClick,
+  type = "button",
+}: ButtonProps) => {
   return (
     <button
+      onClick={() => onClick?.()}
+      type={type}
       className={cx(
-        "rounded-md py-3 w-full text-white mb-4 text-lg",
+        "rounded-md py-2 w-full text-white mb-4 text-base font-semibold",
         css({ background: bgColor })
       )}
     >
